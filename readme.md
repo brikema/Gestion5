@@ -30,30 +30,37 @@
 ### Lancement de l'application
 
 * Se rendre à l'intérieur du projet et ouvrir l'invit de commande Windows'. Exécuter la commande "mvn clean install";
+
+![InstallationCommandeMvn](public/img/InstallationCommandeMvn.PNG)
+
 * Se rendre ensuite dans "Gestion5-presentation" et exécuter la commande "mvn tomcat7:run". L'application se lance;
-* Il faut maintenant aller sur votre navigateur internet dans "http://localhost:8080/Gestion5".
+
+![InstallationCommandeTomcat](public/img/InstallationCommandeTomcat.PNG)
+
+* Il faut maintenant aller sur votre navigateur internet dans http://localhost:8080/Gestion5.
   
 * Les identifiants de connexion sont : 
-  * Utilisateur : "e.chaumont@ensup.eu";
-  * Mot de passe : "e.chaumont".
+  
+  * Utilisateur : "```e.chaumont@ensup.eu```";
+  * Mot de passe : "```e.chaumont```".
 
 ## Fonctonalités
 
 ### Foctionalités disponibles
-* Consulter la liste des étudiants
-* Consulter la liste des cours
-* Ajouter un étudiant
-* Modifier un étudiant
-* Supprimer un étudiant
-* Lier un étudiant à un cours
-* Donner une note à un étudiant
+- [x] Consulter la liste des étudiants
+- [x] Consulter la liste des cours
+- [x] Ajouter un étudiant
+- [x] Modifier un étudiant
+- [x] Supprimer un étudiant
+- [x] Lier un étudiant à un cours
+- [x] Donner une note à un étudiant
   
 ### Fonctionalités futures
-* Consulter des graphiques concernant les moyennes des étudiants
-* Consulter les élèves lié à un cours
-* Ajouter un cours
-* Modifier un cours
-* Supprimer un cours
+- [ ] Consulter des graphiques concernant les moyennes des étudiants
+- [ ] Consulter les élèves lié à un cours
+- [ ] Ajouter un cours
+- [ ] Modifier un cours
+- [ ] Supprimer un cours
 
 ## Prochaines version (todo)
 
@@ -61,7 +68,7 @@
 * Gestion des dates de naissances
 
 ### Robustesse
-* Gérer le cas ou quelqu'un choisit l'espace blanc dans le select
-* Gérer les messages d'erreur de de réussite
+- [ ] Gérer le cas ou quelqu'un choisit l'espace blanc dans le select
+- [ ] Gérer les messages d'erreur de de réussite
 
 ### Tests
