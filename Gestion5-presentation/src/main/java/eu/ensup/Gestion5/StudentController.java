@@ -90,6 +90,8 @@ public class StudentController extends HttpServlet {
 
             personService.linkToCourse(idEtudiant, idCourse);
 
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+
         } else {
             request.getRequestDispatcher("getstudents.jsp").forward(request, response);
         }
