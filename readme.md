@@ -14,7 +14,9 @@
 
 * Depuis Github, cliquer sur code, puis "Download Zip". Le fichier zip du projet se télécharge.
 
-![InstallationGithub](https://github.com/brikema/Gestion5/blob/master/InstallationGithub.png?raw=true)  
+![InstallationGithub](https://github.com/brikema/Gestion5/blob/master/InstallationGithub.png?raw=true)
+![InstallationGithub](https://github.com/brikema/Gestion5/blob/master/public/img/InstallationGithub.png?raw=true)
+![InstallationGithub](./public/img/plot.png.png)
 
 ### Mise en place de la base de données
 
