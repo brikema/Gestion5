@@ -1,0 +1,616 @@
+/* #region [0] - General Settings */
+
+/*  reset all elements */
+*{
+    padding:0;
+    margin:0;
+    text-decoration:none;
+    color:black;
+    font-size:1rem;
+}
+
+textarea {
+    resize:vertical;
+}
+
+html { 
+    font-size: 62.5%; /* This makes it so 1rem = 10px */
+    scroll-behavior: smooth;
+} 
+
+/* Specifies all the variables that we are going to use */
+:root {
+    /* Colors */
+    /* The lights colors are supposed to be usable with black text. The dark colors are supposed to be usable with white text. */
+    --color-primary-dark: #0B6A7D;
+    --color-primary-middle: #119DA4;
+    --color-primary-light: #BFDBF7;   
+    --color-primary-var1: #4b6886;   
+    --color-primary-var2: #364f69;   
+    --color-black-not: rgb(20, 20, 20);
+    --color-white-not: rgb(238, 238, 238);
+    --color-grey-dark:#444444; 
+    --color-grey-middle:#808080;
+    --color-grey-light:#c4c4c4; 
+    --color-grey-very-light:#f3f3f3;
+    --color-error:red;
+    /** Fonts **/
+    --font-title-logo: 'Staatliches', cursive; /* This font is used for the logo of the website*/
+    --font-title-primary: 'Staatliches', cursive; /* This font is used for the main title of the page*/
+    --font-title-secondary: 'Mukta', sans-serif;  /* This font is used for all the other titles*/
+    --font-text-primary: 'Roboto Slab', serif; /* This font is used for most of the texts*/
+    --font-text-secondary: 'Markazi Text', serif; /* This font is used for smallers texts, and not often */
+    /** Animations **/
+}
+
+::selection{
+    background:var(--color-primary-dark);
+    color:white;
+}
+
+::-moz-selection{
+    background:var(--color-primary-dark);
+    color:white;  
+}
+
+/* Give the general layout for the header, nav, main and footer */
+body{
+    display:flex;
+    flex-direction: column;
+    min-height:100vh; /* Make the footer stick at the bottom on pages usually smaller than 100vh */
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(102,102,102,1) 35%, rgba(85,85,85,1) 100%);
+}
+
+footer{
+    margin-top:auto; /* Make the footer stick to the bottom of the page */
+}
+
+main{
+    height:auto;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:"margeLeft content margeRight";
+}
+
+@media screen and (max-width: 760px) {
+    .main_grid_margeLeft,
+    .main_grid_margeRight {
+        display: none;
+    }
+    main {
+        grid-template-columns: 2fr;
+        grid-template-areas: "content";
+    }
+}
+
+.main_grid_content{
+    grid-area: content;
+    padding:1rem;
+    box-sizing: border-box;
+}
+
+.main_grid_margeLeft{
+    grid-area: margeLeft;
+}
+
+.main_grid_margeRight{
+    grid-area: margeRight;
+}
+
+/* Define the fonts and the sizes of the titles */
+h1{
+    font-family:var(--font-title-primary);
+    font-size:5rem;
+}
+p, span, label, input, a, i, li, option, select, textarea{
+    font-family:var(--font-text-primary);
+    font-size: 1.8rem!important; /*  This can go from 16 to 21 based on the font */
+}
+
+p{
+    text-align:justify;
+}
+
+.font-text-secondary{
+    font-family: var(--font-text-secondary);
+    font-size: 1.6rem /* Make the secondary text 2pt smaller than the regular one */
+}
+ 
+/* Define how the layout and make it responsive. Dont use padding or margin or border on div  with these classes */
+._row{
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* gap: 1rem; */
+}
+
+._col {
+    display: inline-block;
+    height: auto;
+    box-sizing: border-box;
+}
+
+._col-12 {
+    width: 100%;
+}
+._col-11 {
+    width: calc(100% / 12 * 11);
+}
+._col-10 {
+    width: calc(100% / 12 * 10);
+}
+._col-9 {
+    width: 75%;
+}
+._col-8 {
+    width: calc(100% / 3 * 2);
+}
+._col-7 {
+    width: calc(100% / 12 * 7);
+}
+._col-6 {
+    width: 50%;
+}
+._col-5 {
+    width: calc(100% / 12 * 5);
+}
+._col-4 {
+    width: calc(100% / 3);
+}
+._col-3 {
+    width: 25%;
+}
+._col-2 {
+    width: calc(100% / 12 * 2);
+}
+._col-1 {
+    width: calc(100% / 12);
+}
+
+@media only screen and (max-width: 1080px) {
+    ._col-md-12 {
+        width: 100%;
+    }
+    ._col-md-11 {
+        width: calc(100% / 12 * 11);
+    }
+    ._col-md-10 {
+        width: calc(100% / 12 * 10);
+    }
+    ._col-md-9 {
+        width: 75%;
+    }
+    ._col-md-8 {
+        width: calc(100% / 3 * 2);
+    }
+    ._col-md-7 {
+        width: calc(100% / 12 * 7);
+    }
+    ._col-md-6 {
+        width: 50%;
+    }
+    ._col-md-5 {
+        width: calc(100% / 12 * 5);
+    }
+    ._col-md-4 {
+        width: calc(100% / 3);
+    }
+    ._col-md-3 {
+        width: 25%;
+    }
+    ._col-md-2 {
+        width: calc(100% / 12 * 2);
+    }
+    ._col-md-1 {
+        width: calc(100% / 12);
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    ._col-sm-12 {
+        width: 100%;
+    }
+    ._col-sm-11 {
+        width: calc(100% / 12 * 11);
+    }
+    ._col-sm-11 {
+        width: calc(100% / 12 * 11);
+    }
+    ._col-sm-10 {
+        width: calc(100% / 12 * 10);
+    }
+    ._col-sm-9 {
+        width: 75%;
+    }
+    ._col-sm-8 {
+        width: calc(100% / 3 * 2);
+    }
+    ._col-sm-7 {
+        width: calc(100% / 12 * 7);
+    }
+    ._col-sm-6 {
+        width: 50%;
+    }
+    ._col-sm-5 {
+        width: calc(100% / 12 * 5);
+    }
+    ._col-sm-4 {
+        width: calc(100% / 3);
+    }
+    ._col-sm-3 {
+        width: 25%;
+    }
+    ._col-sm-2 {
+        width: calc(100% / 12 * 2);
+    }
+    ._col-sm-1 {
+        width: calc(100% / 12);
+    }
+}
+
+/* #endregion */
+
+/* #region [1] - Title Primary */
+
+/* #region [1.1] - Title Primary Main */
+
+.title-primary-main{
+
+}
+
+.title-primary-main_text{
+    white-space: nowrap;
+    text-align:center;
+    margin-bottom:2rem;
+    margin-top:1rem;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+/* #endregion  */
+
+/* #region [2] - Title Secondary */
+
+/* #region [2.1] - Title Secondary Main */
+
+.title-secondary_main{
+
+}
+
+.title-secondary_main_text{
+    /* margin-left:2rem; */
+    width: calc(100% - 2rem); /* Substract the left padding */
+    margin-bottom: 1rem;
+}
+
+h2.title-secondary_main_text{
+    padding-left:2rem;
+}
+
+h3.title-secondary_main_text{
+    padding-left:2.2rem;
+}
+
+h4.title-secondary_main_text{
+    padding-left:2.4rem;
+}
+
+h5.title-secondary_main_text{
+    padding-left:2.6rem;
+}
+
+h6.title-secondary_main_text{
+    padding-left:2.8rem;
+}
+
+/* #endregion */
+
+/* #endregion */
+
+/* #region [3] - Navbar */
+
+
+/* #region [8] - Form */
+
+/* #region [8.1] - Form Button*/
+
+.button--big{
+    padding:2rem;
+    font-size:2.2rem!important;
+}
+
+/* #region [8.1.1] - Form Button Square */
+
+/* RESET button style */
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.button-toReset{
+    width:100%;
+    display: flex;
+}
+
+.button-toReset span{
+    width:100%;
+    text-align: left;
+}
+
+.button-square {
+    cursor: pointer;
+    margin: 1rem 0rem;
+    padding: 0.5em;
+    font-size:1.4rem;
+    transition: 0.1s;
+    font-weight: bold;
+    border: 0.2rem solid var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+    background-color: white;
+    color: var(--color-primary-dark);
+}
+
+.button-square:hover {
+    border-color: var(--color-primary-dark);
+    background-color: var(--color-primary-dark);
+    color: white;
+}
+
+.button-square:active,
+.button-square:focus {
+    outline-color: var(--color-primary-light)!important;
+    outline-style: solid!important;
+    outline-width:0.3rem;
+}
+
+.button-square:active{
+    border-color: var(--color-primary-middle);
+    background-color: var(--color-primary-middle);
+}
+
+/* #endregion */
+
+/* #region [8.1.2] - Form Button Square */
+
+.button-submit i{
+    color:white;
+}
+
+.button-square-reverse {
+    cursor: pointer;
+    margin: 1rem 0rem;
+    padding: 0.5em;
+    font-size:1.4rem;
+    transition: 0.1s;
+    font-weight: bold;
+    border: 0.2rem solid var(--color-primary-dark);
+    background-color: var(--color-primary-dark);
+    color: white;
+}
+
+.button-square-reverse:hover, .button-square-reverse:hover i{
+    border-color: var(--color-primary-dark);
+    background-color: white;
+    color: var(--color-primary-dark)!important;
+}
+
+.button-square-reverse:active,
+.button-square-reverse:focus {
+    outline-color: var(--color-primary-light)!important;
+    outline-style: solid!important;
+    outline-width:0.3rem;
+}
+
+.button-square-reverse:active{
+    border-color: var(--color-primary-middle);
+    color: var(--color-primary-middle);
+}
+
+/***/
+.button-error{
+    margin-left: 1rem;
+    background-color:var(--color-error)!important;
+    border-color:var(--color-error)!important;
+}
+
+.button-error:hover, .button-error:hover i{
+    border-color:var(--color-error)!important;
+    background-color: white!important;
+    color:var(--color-error)!important;
+}
+
+.button-error:active,
+.button-error:focus {
+    outline-color: rgba(168, 50, 50, 0.3)!important;
+}
+
+.button-error:active{
+    border-color:var(--color-error)!important;
+    color:var(--color-error)!important;
+}
+/***/
+
+#presentation{
+    margin-top:2rem; 
+    margin-bottom: 2rem;
+}
+
+/* #region Form Java */
+
+.page-java{
+    padding:2rem;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: auto;
+    margin:auto auto;
+}
+
+.form-java_input-container{
+    padding:1rem;
+    box-sizing: border-box;
+}
+
+main{
+    height:100vh;
+}
+
+.main_grid_content{
+    display: flex;
+}
+
+.page-java_footer{
+    padding-top:2rem;
+    margin-top:2rem;
+    border-top:1px solid var(--color-primary-dark)
+}
+
+.form-java_select{
+    height:3rem;
+}
+
+.form-java_text{
+    height:3rem;
+}
+
+textarea.form-java_text{
+    height:auto;
+}
+
+.form-java_text-searchbar{
+    padding:1rem!important;
+    height:5rem;
+    margin-bottom:1rem!important;
+}
+
+/* #endregion */
+
+.error-manager{
+    border: 3px var(--color-primary-dark) solid;
+    display:none;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+#error-manager-list{
+    margin: 1rem;
+    margin-left: 2rem!important;
+}
+
+/* */
+
+.list-click{
+    /* display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column; */
+    /* border:0.1rem solid black; */
+    height:auto;
+    box-sizing: content-box;
+}
+
+.list-click_item--line{
+    width:inherit!important;
+    border-top:5px solid black!important;
+}
+
+.list-click_item{
+    display: flex;
+    width:100%;
+    height:5rem;
+    line-height:3.6rem;
+    padding:0.7rem;
+    border:inherit;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 0.15rem solid black;
+    margin-left: -0.15rem;
+    margin-top: -0.15rem;
+}
+
+.list-click_item_text{
+    margin: auto 0;
+}
+
+.list-click_item:hover, .list-click_item:focus{
+    background-color: var(--color-grey-very-light)
+}
+
+.list-click_item:active{
+    background-color: var(--color-primary-light);
+}
+
+.list-click_item--active, .list-click_item--active:hover{
+    background-color:var(--color-primary-dark)!important;
+}
+
+.list-click_item--active .list-click_item_text{
+    color:white;
+}
+
+.list-click_item--disabled, .list-click_item--disabled:hover{
+    background-color:var(--color-grey-very-light);
+    pointer-events: none;
+    cursor: default;
+}
+
+.list-click_item--disabled .list-click_item_text{
+    color:var(--color-grey-middle);
+}
+
+.list-click--borderless .list-click_item{
+    border: none!important;
+    margin-left: 0!important;
+    margin-top: 0!important;
+}
+
+.list-click--borderless-half .list-click_item{
+    border-left:none!important;
+    border-right:none!important;
+    margin-top: 0!important;
+}
+
+/* */
+
+/* */
+
+.link-normal{
+    --color-blue-underline : rgb(0, 97, 175); /* Most of the times links are blue */
+    --color-violet-underline : rgb(90, 0, 175); /* This is used for visited links */
+    color:black;
+}
+
+.link-normal:hover{
+    /* text-decoration:underline; */
+}
+
+.link-normal:visited{
+    /* color:var(--color-violet-underline); */
+}
+
+.link-normal:active{
+    color:var(--color-primary-dark)
+}
+
+.link-normal:hover, .link-normal:hover i{
+    color:var(--color-primary-dark)
+}
+
+.link-normal:focus{
+
+}
+
+.link-normal:active, .link-normal:focus{
+    outline:dotted;
+    outline-color: var(--color-grey-light)
+}
+
+/* */

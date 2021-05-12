@@ -1,0 +1,8 @@
+# Project exclude paths
+/Gestion5-dao/target/
+/Gestion5-domain/target/
+/Gestion5-dto/target/
+/Gestion5-log/target/
+/Gestion5-mapper/target/
+/Gestion5-presentation/target/
+/Gestion5-service/target/
