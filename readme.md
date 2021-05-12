@@ -16,8 +16,8 @@
 
 ![InstallationGithub](https://github.com/brikema/Gestion5/blob/master/InstallationGithub.png?raw=true)
 ![InstallationGithub](https://github.com/brikema/Gestion5/blob/master/public/img/InstallationGithub.png?raw=true)
-![InstallationGithub](./public/img/plot.png)
-![InstallationGithub](public/img/plot.png)
+![InstallationGithub](./public/img/InstallationGithub.png)
+![InstallationGithub](public/img/InstallationGithub.png)
 
 ### Mise en place de la base de données
 
