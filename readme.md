@@ -1,7 +1,28 @@
 # Application Gestion5
 
 ## Installation
-* 
+
+### Pré-requis
+
+* Avoir java avec le jdk et jre 15 installé;
+* Avoir Maven installé;
+* Avoir tomcat7 installé;
+* Avoir phpMyAdmin installé et en train de tourner.
+
+
+### Début de l'installation
+
+* Depuis Github, cliquer sur code, puis "Download Zip". Le fichier zip du projet se télécharge.
+
+![InstallationGithub](public/img//InstallationGithub.png?raw=true "InstallationGithub")
+  
+### Mise en place de la base de données
+
+* Dans phpMyAdmin, Cliquez sur "Nouvelle base de données", puis dans l'onglet "Importer", cliquer sur "choisir un fichier" et choisir le fichier "basededonnees.sql" situé à la racine du projet.
+
+![InstallationPhpBase](public/img//InstallationPhpBase.png?raw=true "InstallationPhpBase")
+
+### Lancement de l'application
 
 ## Fonctonalités
 
@@ -14,7 +35,7 @@
 * Lier un étudiant à un cours
 * Donner une note à un étudiant
   
-### Future fonctionalités futures
+### Fonctionalités futures
 * Consulter des graphiques concernant les moyennes des étudiants
 * Consulter les élèves lié à un cours
 * Ajouter un cours
