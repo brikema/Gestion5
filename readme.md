@@ -4,7 +4,7 @@
 
 ### Pré-requis
 
-* Avoir java avec le jdk et jre 15 installé;
+* Avoir java avec le jdk et jre 15.0.2 installé;
 * Avoir Maven installé;
 * Avoir tomcat7 installé;
 * Avoir phpMyAdmin installé et lancé.
