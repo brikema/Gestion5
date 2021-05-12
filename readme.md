@@ -14,13 +14,13 @@
 
 * Depuis Github, cliquer sur code, puis "Download Zip". Le fichier zip du projet se télécharge.
 
-![InstallationGithub](public/img//InstallationGithub.png?raw=true "InstallationGithub")
-  
+![InstallationGithub](https://github.com/brikema/Gestion5/blob/master/InstallationGithub.png?raw=true)  
+
 ### Mise en place de la base de données
 
 * Dans phpMyAdmin, Cliquez sur "Nouvelle base de données", puis dans l'onglet "Importer", cliquer sur "choisir un fichier" et choisir le fichier "basededonnees.sql" situé à la racine du projet.
 
-![InstallationPhpBase](public/img//InstallationPhpBase.png?raw=true "InstallationPhpBase")
+![InstallationPhpBase](https://github.com/brikema/Gestion5/blob/master/InstallationPhpBase.png?raw=true)
 
 ### Lancement de l'application
 
