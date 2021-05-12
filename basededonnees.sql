@@ -23,6 +23,8 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+CREATE DATABASE gestion5;
+
 --
 -- Structure de la table `course`
 --
