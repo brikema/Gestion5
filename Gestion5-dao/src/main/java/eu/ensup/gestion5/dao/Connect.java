@@ -4,6 +4,7 @@ package eu.ensup.gestion5.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 /**
  * The type Connect.
@@ -11,9 +12,9 @@ import java.sql.SQLException;
 public class Connect
 {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/gestion5?serverTimezone=Europe/Berlin";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "";
+    private static  String URL = "";
+    private static  String USERNAME = "";
+    private static  String PASSWORD = "";
 
     /**
      * Open an connention with the information in the class
@@ -25,6 +26,10 @@ public class Connect
         Connection cn = null;
         try
         {
+            ResourceBundle bundle = ResourceBundle.getBundle("db");
+            URL = bundle.getString("db.url");
+            USERNAME = bundle.getString("db.username");
+            PASSWORD =bundle.getString("db.password");
             //Chargement du Driver
             //?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC
 
