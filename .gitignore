@@ -6,3 +6,10 @@
 /Gestion5-mapper/target/
 /Gestion5-presentation/target/
 /Gestion5-service/target/
+
+/.idea/
+/*/.idea/
+*.iml
+target
+/target/
+/target
