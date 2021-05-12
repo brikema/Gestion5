@@ -54,21 +54,17 @@
 - [x] Supprimer un étudiant
 - [x] Lier un étudiant à un cours
 - [x] Donner une note à un étudiant
-  
-### Fonctionalités futures
-- [ ] Consulter des graphiques concernant les moyennes des étudiants
+- [x] Consulter des graphiques concernant les moyennes des étudiants
 - [ ] Consulter les élèves lié à un cours
 - [ ] Ajouter un cours
 - [ ] Modifier un cours
 - [ ] Supprimer un cours
-
-## Prochaines version (todo)
-
-### Fonctionalités
-* Gestion des dates de naissances
+- [ ] Gestion des dates de naissances
 
 ### Robustesse
 - [ ] Gérer le cas ou quelqu'un choisit l'espace blanc dans le select
-- [ ] Gérer les messages d'erreur de de réussite
+- [ ] Gérer les messages d'erreur de de réussite du login
 
 ### Tests
+- [ ] Tests sur les utilisateurs
+- [ ] Tests sur les cours
