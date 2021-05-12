@@ -46,7 +46,7 @@
 
 ## Fonctonalités
 
-### Foctionalités disponibles
+### Fonctionalités
 - [x] Consulter la liste des étudiants
 - [x] Consulter la liste des cours
 - [x] Ajouter un étudiant
