@@ -1,0 +1,22 @@
+<div style="margin-right:2rem; margin-left: 2rem">
+    <div class="_row">
+        <div class="_col _col-6" (click)="validateForm(randomFighter1.id, randomFighter2.id)">
+            <h2>{{ randomFighter1.name }}</h2>
+            <img src="/assets/images/{{randomFighter1.imageName}}.gif" />
+        </div>
+    
+        <div class="_col _col-6 right-fighter" (click)="validateForm(randomFighter2.id, randomFighter1.id)">
+            <h2>{{ randomFighter2.name }}</h2>
+            <img src="/assets/images/{{randomFighter2.imageName}}.gif" />
+        </div>
+    </div>
+    
+    <div style="padding-top:5rem" class="_row">
+        <h3>Rank</h3>
+        <ul class="_col _col-12">
+            <li *ngFor="let fighter of fighters">
+                {{ fighter.name }} - {{ fighter.average | percent }}
+            </li>
+        </ul>
+    </div>
+</div>

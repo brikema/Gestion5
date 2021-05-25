@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+
+._row{
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* gap: 1rem; */
+}
+
+._col {
+    display: inline-block;
+    height: auto;
+    box-sizing: border-box;
+}
+
+._col-12 {
+    width: 100%;
+}
+
+._col-6 {
+    width: 50%;
+}
+
+.right-fighter{
+    text-align:right
+}
+
+.right-fighter img{
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+img{
+    max-height:8rem;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
