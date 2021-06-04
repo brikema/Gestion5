@@ -1,20 +1,28 @@
 pipeline {
-	agent any
-	stages {
-		stage('Build') {
-			steps {
-				echo 'Building..'
-			}
-		}
-		stage('Test') {
-			steps {
-				echo 'Testing..'
-			}
-		}
-		stage('Deploy') {
-			steps {
-				echo 'Deploying....'
-			}
-		}
-	}
+   
+        stage ('Build') {
+            steps {
+                    echo 'Build..'
+                    bat 'mvn clean install'
+            }
+        }
+        stage('Test') {
+                steps {
+                    echo 'Testing..'
+                    bat 'mvn test'
+                }
+            }
+            stage('Deploy') {
+                    steps {
+                        echo 'Deploying....'
+                         script {
+                            try {
+                                deploy adapters: [tomcat9(credentialsId: 'bricema', url: 'http://localhost:8080/')], contextPath: '/Gestion5', war: '**/*.war'
+                                } catch (err) {
+                            }
+                         }
+                    }
+                }
+    
+}
 }
