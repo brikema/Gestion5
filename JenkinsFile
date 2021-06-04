@@ -1,5 +1,6 @@
 pipeline {
-        agent any
+    agent any
+    stages {
         stage ('Build') {
             steps {
                     echo 'Build..'
@@ -17,10 +18,11 @@ pipeline {
                         echo 'Deploying....'
                          script {
                             try {
-                                deploy adapters: [tomcat9(credentialsId: 'bricema', url: 'http://localhost:8080/')], contextPath: '/Gestion5', war: '**/*.war'
+                                deploy adapters: [tomcat9(credentialsId: 'bricema', url: 'http://localhost:8080/')], contextPath: '/EtablissementScolaire', war: '**/*.war'
                                 } catch (err) {
                             }
                          }
                     }
                 }
+}
 }
