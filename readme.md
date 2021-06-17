@@ -65,6 +65,7 @@
 - [ ] Gérer le cas ou quelqu'un choisit l'espace blanc dans le select
 - [ ] Gérer les messages d'erreur de de réussite du login
 
-### Tests
+### Sécurité
 - [ ] Tests sur les utilisateurs
 - [ ] Tests sur les cours
+- [ ] Mettre en place log4j
